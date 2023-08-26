@@ -1,0 +1,70 @@
+.overlay-clr{
+    background: hsl(168, 100%, 29%,0.6);
+ }
+ 
+.caption-text{
+    color: #00000094;
+    transition: 0.29s ease;
+}
+
+.caption-text:hover{
+    color: #ffffff;
+}
+ .main-card ul a{
+    text-decoration: none;
+    color: #333;
+}
+.main-card{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 25px;
+
+}
+footer{
+    background-color: #433939;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+}
+#footer-logo{
+    width: 59%;
+    height: auto;
+} 
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-column {
+    flex: 1;
+
+    padding: 20px;
+    text-align: left;
+
+}
+.footer-column h3{
+    color: #fff;
+} 
+.socials a{
+    float: right;
+    text-decoration: none;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+}
+footer ul li a{
+    color:#a8a8a8;
+    text-decoration: none;
+}
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
