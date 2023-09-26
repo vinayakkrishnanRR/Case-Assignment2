@@ -4,24 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kerala-Tourism</title>
-    <link rel="stylesheet" href="Css/style.css">
-    <!-- <style>.bg-danger {
-        background-color: red !important;
-    }
-    .bg-warning {
-        background-color: orange !important;
-    }
-    .bg-success {
-        background-color: green !important;
-    }
-    </style> -->
+    <link rel="stylesheet" href="Css/Sign_up(1) style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-     <link rel="stylesheet" href="Css/Sign_up(1) style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
     <nav class="navbar navbar-expand-lg bg-transparent fixed-top" data-bs-theme="bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html"><img src="Images/kerala tourism logo small.png" alt=""></a>
@@ -46,10 +33,11 @@
           </div>
         </div>
      </nav>
+<!-- SignUp -->
 
      <div class="signin_main">
       <h1>Sign Up</h1><br>
-      <form class="row g-3 signin_main" action="success.html" >
+      <form class="row g-3 signin_main" id="signupform">
           <div class="col-md-4">
               <label for="inputname" class="form-label">First Name</label>
               <input type="text" id="name" name="namex"class="form-control" placeholder="First name">
@@ -62,48 +50,28 @@
               <label for="inputname2" class="form-label">Last Name</label>
               <input type="text"id="name2" name="namez" class="form-control" placeholder="Last name">
           </div>
-          <div class="col-md-5">
-              <label for="inputState" class="form-label">State</label>
-              <input type="text" id="State" name="state1" class="form-control" placeholder="State">
-          </div>
-          <div class="col-md-7">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" id="City" name="city 1class="form-control" placeholder="City">
-          </div>
+         
           <div class="col-md-6">
-              <label for="inputnumber" class="form-label">Phone number</label>
-              <input type="text" id="phn" name="phone1" class="form-control">
-          </div>
-          <div class="col-md-6">
-              <label for="inputnumber" class="form-label">Land line (optional)</label>
-              <input type="text" id="lphn" name="phone2" class="form-control">
+              <label for="inputNumber" class="form-label">Phone number</label>
+              <input type="text" id="phn" name="phone1"  onblur="validateNum()" class="form-control">
+              <span id="numConfirm"></span>
           </div>
           <div class="col-md-12">
               <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" id="email" name="email1" class="form-control" placeholder="Enter your mail id">
+              <input type="email" id="email" name="email1" onblur="validateMail()"class="form-control" placeholder="Enter your mail id">
+              <span id="emailConfirm"></span>
           </div>
-          <!-- <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" id="pwd" name="pwd1" class="form-control" placeholder="Enter a password">
-          </div>
-          <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Re-enter your password</label>
-              <input type="password" id="pwdre" name="pwdre1" class="form-control" placeholder="Enter a password">
-          </div> -->
           <div class="col-md-12">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Enter a password" required onkeyup="checkPasswordStrength()">
+            <div id="passStrengthDisplay">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter a password"onblur="validatePass()" onclick="resetPassBar()">
+            </div>
+            <span id="passCheck"></span>
         </div>
-        <!-- <div class="col-md-12">
-            <label id="password-strength" class="password-strength"></label> -->
-        <!-- </div> -->
-        <br>
-        <div id="password-strength" class="progress" >
-            <div class="progress-bar" role="progressbar"></div>
-        </div><br>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Re-enter your password</label>
-            <input type="password" id="pwdre" name="pwdre1" class="form-control" placeholder="Enter a password">
+            <input type="password" id="pwdre" name="pwdre1" class="form-control" placeholder="Enter a password" onblur="confirmPass()">
+            <span id="passConfirm"></span>
         </div>
         
           <div class="col-12">
@@ -118,7 +86,7 @@
               </div>
           </div>
           <div class="col-12">
-              <button type="submit" class="btn btn-primary" onclick="validate()">Sign Up</button>
+              <button type="submit" class="btn btn-primary" id="submitButton" onclick="formCompletionCheck()">Sign Up</button>
           </div>
       </form>
   </div>
@@ -127,4 +95,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> 
+
