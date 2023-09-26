@@ -1,7 +1,25 @@
-form{
+ form{
     background-color: beige;
     padding: 20px;
 }
 body{
     background-color: beige;
+} 
+
+/* forms */
+#passStrengthDisplay{    
+    border-radius: 12px;
 }
+.weakPassword{
+    border-bottom: 2px solid red;
+}  
+.mediumPassword{
+    border-bottom: 2px solid orange;  
+}  
+.strongPassword{
+    border-bottom: 2px solid limegreen;
+} 
+.veryStrongPassword{
+    border-bottom: 2px solid green;
+}
+/* forms */
