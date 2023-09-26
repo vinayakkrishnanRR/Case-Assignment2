@@ -4,3 +4,12 @@ form{
     padding: 2%;
     margin-top: 10%;
 }
+ .bg-danger {
+    background-color: red !important;
+}
+.bg-warning {
+    background-color: orange !important;
+}
+.bg-success {
+    background-color: green !important;
+} 
